@@ -1,125 +1,115 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="个人主页" />
-  <title>你的名字 · 个人主页</title>
-  <style>
-    :root {
-      --bg: #0b1020;
-      --card: rgba(255,255,255,.08);
-      --text: #f5f7fb;
-      --muted: #aab3c5;
-      --accent: #8ab4ff;
-      --border: rgba(255,255,255,.14);
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-      color: var(--text);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(78, 128, 255, .24), transparent 32%),
-        radial-gradient(circle at 80% 70%, rgba(141, 94, 255, .22), transparent 30%),
-        var(--bg);
-    }
-
-    .card {
-      width: min(760px, 100%);
-      padding: 48px;
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      background: var(--card);
-      backdrop-filter: blur(18px);
-      box-shadow: 0 24px 80px rgba(0,0,0,.28);
-    }
-
-    .eyebrow {
-      margin: 0 0 14px;
-      color: var(--accent);
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(42px, 8vw, 76px);
-      line-height: .98;
-      letter-spacing: -.045em;
-    }
-
-    .intro {
-      margin: 24px 0 0;
-      max-width: 600px;
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.8;
-    }
-
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 32px;
-    }
-
-    .links a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      padding: 0 18px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      color: var(--text);
-      text-decoration: none;
-      transition: .2s ease;
-    }
-
-    .links a:hover {
-      transform: translateY(-2px);
-      border-color: rgba(255,255,255,.3);
-      background: rgba(255,255,255,.08);
-    }
-
-    footer {
-      margin-top: 42px;
-      color: #7e899f;
-      font-size: 14px;
-    }
-
-    @media (max-width: 600px) {
-      .card { padding: 32px 24px; border-radius: 22px; }
-      .intro { font-size: 16px; }
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Siqi Zhu — Ph.D. student at Beijing Institute of Technology. Exploring 3D generation, embodiment, and the space between imagination and reality.">
+  <meta name="theme-color" content="#f4f2eb">
+  <title>Siqi Zhu — Research & Exploration</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c303a'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia' font-size='38' fill='%23f4f2eb'%3Esz%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <main class="card">
-    <p class="eyebrow">Hello, I'm</p>
-    <h1>你的名字</h1>
-    <p class="intro">
-      这里是我的个人主页。你可以把这段文字改成一句自我介绍，例如：
-      “产品设计师 / 开发者 / 摄影爱好者，目前专注于有趣的互联网项目。”
-    </p>
-
-    <nav class="links" aria-label="个人链接">
-      <a href="https://github.com/yourname" target="_blank" rel="noreferrer">GitHub</a>
-      <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
-      <a href="mailto:you@example.com">Email</a>
+  <div class="entrance-curtain" hidden>
+    <div class="curtain-panels" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="curtain-signature" aria-hidden="true"><span>Siqi <em>Zhu.</em></span><p class="micro">A world of possibilities</p></div>
+    <button class="curtain-skip micro">Skip intro ↗</button>
+  </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner wrap">
+      <a class="brand" href="#profile" aria-label="Siqi Zhu — home">sz<span>.</span></a>
+      <nav class="navigation" aria-label="Main navigation">
+        <a href="#profile" aria-current="location">About<span class="nav-dot"></span></a>
+        <a href="#education">Background<span class="nav-dot"></span></a>
+        <a href="#research">Research<span class="nav-dot"></span></a>
+        <a href="#publications">Publications<span class="nav-dot"></span></a>
+      </nav>
+      <a class="header-link" href="https://pie-lab.cn/" target="_blank" rel="noreferrer">PIE Lab <span aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation"><span></span><span></span></button>
+    </div>
+    <nav class="mobile-nav wrap" id="mobile-nav" aria-label="Mobile navigation" hidden>
+      <a href="#profile">About <span>00</span></a><a href="#education">Background <span>01</span></a><a href="#research">Research <span>02</span></a><a href="#publications">Publications <span>03</span></a>
     </nav>
+    <div class="reading-progress" aria-hidden="true"></div>
+  </header>
 
-    <footer>© 2026 你的名字 · Built with plain HTML & CSS.</footer>
+  <main id="main">
+    <section class="hero wrap" id="profile" aria-labelledby="hero-title">
+      <div class="hero-topline micro"><span><i class="status-dot"></i> Researcher. Explorer. Always curious.</span><span class="hero-location">Beijing, China <span class="tiny-star">✳</span></span></div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow intro-enter">Hello, I’m</p>
+          <h1 class="intro-enter" id="hero-title" data-split>Siqi <em>Zhu</em><span class="name-period">.</span></h1>
+          <p class="hero-statement intro-enter" data-split>Imagining worlds.<br>Making them <em>possible.</em></p>
+          <div class="hero-description intro-enter">
+            <p>I’m a first-year Ph.D. student in the <a href="https://cs.bit.edu.cn/" target="_blank" rel="noreferrer">School of Computer Science &amp; Technology</a> at <a href="https://bit.edu.cn/" target="_blank" rel="noreferrer">Beijing Institute of Technology</a>.</p>
+            <p>I’m a member of the <a href="https://pie-lab.cn/" target="_blank" rel="noreferrer">Perception, Interaction, and Embodiment Lab</a>, supervised by <a href="https://liangwei-bit.github.io/web/" target="_blank" rel="noreferrer">Prof. Wei Liang</a>.</p>
+            <p>My research interests include <strong>3D generation</strong>, <strong>human motion</strong> and <strong>Embodiment</strong>.</p>
+          </div>
+          <a class="round-link intro-enter" href="#research"><span class="circle-arrow" aria-hidden="true">↓</span><span>Explore my research</span></a>
+        </div>
+        <figure class="portrait intro-enter">
+          <div class="portrait-frame">
+            <img class="portrait-image" src="assets/5f788a0bb756bbe7fab57b33de4014.JPG" alt="Siqi Zhu looking out towards a sunlit mountain range" width="1080" height="810" fetchpriority="high">
+            <span class="photo-corner top-left"></span><span class="photo-corner bottom-right"></span>
+            <span class="photo-mark micro">A different perspective</span>
+          </div>
+          <figcaption><span>Beyond the screen, into the world.</span><span class="micro">01 — A moment outside</span></figcaption>
+        </figure>
+      </div>
+      <div class="hero-bottom micro"><span>Perception · Interaction · Embodiment</span><a href="#education">Explore my background <span aria-hidden="true">↙</span></a></div>
+    </section>
+
+    <div class="marquee" role="region" aria-label="Creative philosophy">
+      <div class="marquee-top wrap micro"><span>Curiosity in motion</span><button class="marquee-toggle" aria-pressed="false" aria-label="Pause scrolling text" hidden>Pause Ⅱ</button></div>
+      <p class="sr-only">Imagine. Create. Interact. Explore.</p>
+      <div class="marquee-track" aria-hidden="true">
+        <div class="marquee-group"><span>Imagine.</span><i>✳</i><span><em>Create.</em></span><i>✳</i><span>Interact.</span><i>✳</i><span><em>Explore.</em></span><i>✳</i></div>
+        <div class="marquee-group"><span>Imagine.</span><i>✳</i><span><em>Create.</em></span><i>✳</i><span>Interact.</span><i>✳</i><span><em>Explore.</em></span><i>✳</i></div>
+      </div>
+    </div>
+
+    <section class="education wrap section-space" id="education" aria-labelledby="education-title">
+      <div class="section-label reveal"><span class="section-index">01 /</span><h2 id="education-title">The path so far</h2></div>
+      <div class="education-content reveal"><div class="education-heading"><h3 data-split>Grounded in learning.<br><em>Driven by curiosity.</em></h3><span class="education-symbol" aria-hidden="true">↗</span></div>
+        <div class="education-list">
+          <article class="education-entry"><div class="education-time micro"><i class="status-dot"></i> 2026—Present</div><div><p class="degree">Ph.D. in Computer Science</p><h4>Beijing Institute of Technology</h4><p class="education-school">School of Computer Science &amp; Technology</p><p class="supervisor">Supervised by <a href="https://liangwei-bit.github.io/web/" target="_blank" rel="noreferrer">Prof. Wei Liang <span aria-hidden="true">↗</span></a></p></div><span class="education-location micro">Beijing, China</span></article>
+          <article class="education-entry"><div class="education-time micro">2025—2026</div><div><p class="degree">Master’s in Computer Science</p><h4>Beijing Institute of Technology</h4><p class="education-school">School of Computer Science &amp; Technology</p></div><span class="education-location micro">Beijing, China</span></article>
+          <article class="education-entry"><div class="education-time micro">2021—2025</div><div><p class="degree">Bachelor’s in Computer Science</p><h4>Beijing Institute of Technology</h4><p class="education-school">School of Computer Science &amp; Technology</p></div><span class="education-location micro">Beijing, China</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="research dark-section" id="research" aria-labelledby="research-title">
+      <div class="wrap section-space">
+        <div class="section-label reveal"><span class="section-index">02 /</span><h2 id="research-title">Research interests</h2><span class="section-aside">Ideas taking shape</span></div>
+        <div class="research-heading reveal"><h3 data-split>From possibility<br>to <em>presence.</em></h3><p>Creating in three dimensions.<br>Understanding through interaction.</p></div>
+        <div class="research-grid">
+          <div class="research-visual reveal">
+            <canvas id="research-canvas" aria-label="Animated three-dimensional point cloud illustrating generated geometry" role="img"></canvas>
+            <div class="visual-header micro"><span><i class="status-dot"></i> Spatial explorations</span><span id="visual-mode">01 / Generation</span></div>
+            <div class="visual-footer micro"><span class="interaction-hint">Move to explore</span><button class="motion-toggle" aria-pressed="false" aria-label="Pause 3D animation"><span class="pause-icon" aria-hidden="true">Ⅱ</span><span class="motion-label">Pause</span></button></div>
+            <noscript><p class="canvas-fallback">3D generation × Embodiment</p></noscript>
+          </div>
+          <div class="research-topics" aria-label="Explore research directions">
+            <button class="topic active reveal" data-mode="generation" aria-pressed="true"><span class="topic-top micro"><span>01 / Create</span><span class="topic-arrow" aria-hidden="true">↗</span></span><span class="topic-title">3D Generation</span><span class="topic-description">Exploring how digital content takes shape, from three-dimensional geometry to the worlds around us.</span><span class="topic-keywords micro">Geometry · Scenes · Digital worlds</span></button>
+            <button class="topic reveal" data-mode="embodiment" aria-pressed="false"><span class="topic-top micro"><span>02 / Interact</span><span class="topic-arrow" aria-hidden="true">↗</span></span><span class="topic-title">Embodiment</span><span class="topic-description">Exploring the connection between perception and action, and how agents engage with their environments.</span><span class="topic-keywords micro">Perception · Action · Interaction</span></button>
+          </div>
+        </div>
+        <p class="research-footnote micro reveal">An ongoing exploration of the worlds we build and the intelligence within them.</p>
+      </div>
+    </section>
+
+    <section class="publications wrap section-space" id="publications" aria-labelledby="publications-title">
+      <div class="section-label reveal"><span class="section-index">03 /</span><h2 id="publications-title">Publications</h2></div>
+      <div class="publications-content reveal"><h3 data-split>A space for<br><em>what comes next.</em></h3><div class="publication-note"><span class="publication-asterisk" aria-hidden="true">✳</span><div><p>Research is a work in progress.</p><span>Publications and project details will be shared here.</span></div></div></div>
+    </section>
   </main>
+
+  <footer class="site-footer dark-section">
+    <div class="wrap"><div class="footer-top"><div><p class="micro">Always curious about what’s next</p><p class="footer-title">Keep <em>exploring.</em></p></div><a class="footer-lab" href="https://pie-lab.cn/" target="_blank" rel="noreferrer"><span>Find me at<br><strong>PIE Lab</strong></span><span class="circle-arrow" aria-hidden="true">↗</span></a></div><div class="footer-bottom micro"><span>© <span id="year">2026</span> Siqi Zhu</span><span>Beijing Institute of Technology</span><a href="#profile">Back to top <span aria-hidden="true">↑</span></a></div></div>
+  </footer>
 </body>
 </html>
