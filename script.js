@@ -38,7 +38,7 @@
   if (!reducedMotion.matches && !location.hash && scrollY < 10) {
     curtain.hidden = false;
     document.body.classList.add('intro-pending');
-    const releaseTimer = setTimeout(() => document.body.classList.remove('intro-pending'), 3150);
+    const releaseTimer = setTimeout(() => document.body.classList.remove('intro-pending'), 3030);
     const finishIntro = () => {
       clearTimeout(releaseTimer);
       clearTimeout(finishTimer);
@@ -54,7 +54,7 @@
     const skipButton = curtain.querySelector('.curtain-skip');
     const skipOnKey = event => { if (event.key === 'Escape') finishIntro(); };
     const skipOnFocus = event => { if (!curtain.contains(event.target)) finishIntro(); };
-    const finishTimer = setTimeout(finishIntro, 4400);
+    const finishTimer = setTimeout(finishIntro, 4300);
     skipButton.addEventListener('click', finishIntro, { once: true });
     document.addEventListener('keydown', skipOnKey);
     document.addEventListener('focusin', skipOnFocus);
