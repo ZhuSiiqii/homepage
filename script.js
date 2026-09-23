@@ -126,8 +126,10 @@
   }
 
   const progress = document.querySelector('.reading-progress');
-  const sections = [...document.querySelectorAll('#profile, #research, #education, #publications')];
+  const sections = [...document.querySelectorAll('main section[id]')];
   const navLinks = [...document.querySelectorAll('.navigation a, .mobile-nav a')];
+  const header = document.querySelector('.site-header');
+  const darkSections = [...document.querySelectorAll('.research, .site-footer')];
   let scrollFrame = 0;
   function updateScroll() {
     const maxScroll = document.documentElement.scrollHeight - innerHeight;
@@ -136,6 +138,10 @@
     sections.forEach(section => {
       if (section.getBoundingClientRect().top <= innerHeight * .35) active = section.id;
     });
+    header.classList.toggle('on-dark', darkSections.some(section => {
+      const bounds = section.getBoundingClientRect();
+      return bounds.top <= header.offsetHeight && bounds.bottom > header.offsetHeight;
+    }));
     navLinks.forEach(link => {
       if (link.hash === `#${active}`) link.setAttribute('aria-current', 'location');
       else link.removeAttribute('aria-current');

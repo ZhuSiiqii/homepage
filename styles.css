@@ -89,6 +89,18 @@ button {
   background: rgba(244,242,235,.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  transition: background .35s ease, color .35s ease;
+}
+.site-header.on-dark {
+  color: var(--paper);
+  background: rgba(25,46,55,.95);
+}
+.site-header.on-dark .header-inner,
+.site-header.on-dark .mobile-nav a {
+  border-color: #42535b;
+}
+.site-header.on-dark .menu-toggle span {
+  background: var(--paper);
 }
 .header-inner {
   height: var(--header);
@@ -135,6 +147,10 @@ button {
 }
 .header-link span {
   margin-left: 17px;
+}
+.header-link:hover,
+.hero-bottom a:hover {
+  color: var(--accent);
 }
 .reading-progress {
   height: 1px;
@@ -342,7 +358,7 @@ button {
   border-top: 1px solid var(--line);
   padding: 23px 0;
   color: var(--muted);
-  font-size: 9px;
+  font-size: 10px;
 }
 .hero-bottom a span {
   margin-left: 24px;
@@ -372,6 +388,10 @@ button {
 .dark-section {
   background: var(--dark);
   color: var(--paper);
+}
+.research,
+.site-footer {
+  border-top: 1px solid rgba(197,170,129,.25);
 }
 .dark-section .section-index {
   color: #c5aa81;
@@ -515,7 +535,7 @@ button {
 }
 .research-footnote {
   color: #a5b5ba;
-  font-size: 8px;
+  font-size: 10px;
   margin-top: 25px;
 }
 .canvas-fallback {
@@ -624,6 +644,10 @@ button {
   max-width: 100%;
   height: auto;
   border-radius: 5px;
+  transition: transform .3s ease;
+}
+.publication-teaser:hover img {
+  transform: translateY(-2px);
 }
 .publication-badge {
   position: absolute;
@@ -756,6 +780,9 @@ button {
 .footer-bottom a span {
   margin-left: 18px;
 }
+.footer-bottom a:hover {
+  color: #d4ba95;
+}
 .reveal {
   transition: opacity .8s ease,transform .8s cubic-bezier(.2,.65,.3,1);
 }
@@ -842,6 +869,7 @@ button {
   overflow: hidden;
   padding: 23px 0 34px;
   border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 .marquee-top {
   display: flex;
@@ -1176,7 +1204,7 @@ button {
   }
   .footer-bottom {
     flex-wrap: wrap;
-    font-size: 7px;
+    font-size: 9px;
     gap: 16px;
   }
   .footer-bottom>span:nth-child(2) {
